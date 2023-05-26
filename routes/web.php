@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DetailController;
 use App\Http\Controllers\TransactionController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,5 @@ Route::get('/{id}/contact', function($id){
 Route::get('/{id}/detail/{idBook}', [BookController::class, 'show']);
 Route::post('/buyBooks',[TransactionController::class, 'store']);
 Route::get("/{id}/transaction", [TransactionController::class, 'index']);
+
+Route::get("/", [DetailController::class, 'index']);
